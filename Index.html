@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="carApp">
+<head>
+  <title>Anu Rent A Car</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <link rel="stylesheet" href="custom.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+  <script src="car-controller.js"></script>
+
+</head>
+<body ng-controller="CarCtrl">
+	
+	<div class="section1">
+		<div class="logo"><span class="logo1">Anu</span>  Rent A Car</div>
+	</div>
+	
+	<div class="section2">
+		<div class="selection">Select the type of car you like to rent :</div>
+		<div class="btn-group btn-lg">
+		  <button type="button" class="btn btn-primary btn-lg" ng-repeat="car in cars" ng-click="setCurrentCar(car.type)">{{car.type}}</button>
+		</div>	
+	</div>
+	
+	<div class="display-area" ng-repeat="car in cars | filter:currentCar" >
+		<div class="col-sm-3 col-md-4 col-lg-4">
+			<img ng-src="{{car.img}}" class="img-responsive img-circle margin" style="display:inline" alt="Picture" width="500" height="500">
+		</div>
+		<div class="col-sm-9 col-md-8 col-lg-8">
+			<form class="reserve" ng-submit="updateCount(car)">
+			<ul>
+				<li>
+					<span class="car-sample">{{car.sample}}</span>
+				</li>
+				<li>
+					<div class="name">Type</div><div class="value car-type">{{car.type}}</div>
+				</li>
+				<li>
+					<div class="name">Rate</div><div class="value">{{car.rate | currency}}/day</div>
+				</li>
+				<li>
+					<div class="name">Passenger/Bags</div><div class="value">{{car.passengers}}/{{car.bags}}</div>
+				</li>
+				<li>
+					<div class="name">Available</div><div class="value">{{car.available}}</div>
+				</li>
+				<li>
+					<input type="submit" value="Reserve Now" class="button btn btn-success btn-lg" ng-show="car.available"/>
+				</li>
+				<li>
+					<div class="alert alert-warning" ng-hide="car.available">Sorry. This car is currently unavailable to rent</div>
+				</li>
+			</ul>
+
+			</form>
+			</div>
+		</div>
+	</div>
+	
+
+</body>
+</html>

@@ -1,0 +1,82 @@
+  body {
+      font: 20px Montserrat, sans-serif;
+      line-height: 1.8;
+      color: #f5f6f7;
+	  background-color: powderblue;
+  }
+  .section1 {
+      background-color: green;
+	  padding:30px;
+	}
+  .logo {
+	  background-color:lightgrey;
+      color: black;
+	  text-align:center;
+	  font:25px Montserrat, sans-serif;
+	  padding-top:20px;
+	  padding-bottom:20px;
+	  padding-left:50px;
+	  padding-right:50px;
+	  display:inline;
+	  border-style:solid;
+	  border-color:#d9d9d9;
+	  border-radius:50%;
+  }
+  .logo1 {
+	  font:40px Montserrat, sans-serif;
+	  margin-right:20px;
+  }
+
+  .section2 {
+      background-color: white;
+	  color:grey;
+	  padding:20px;
+	  border-style:solid;
+	}
+
+  .selection {
+      background-color: white;
+	  color:grey;
+	  padding-top:20px;
+	  padding-bottom:20px;
+	  padding-left:20px;
+	  padding-right:40px;
+	  display:inline;
+	}
+	
+  .reserve {
+    background-color: #e6e6e6;
+	color:black;
+	margin:10px;
+	width:600px;
+	padding:30px;
+  }
+  
+	li{
+		list-style: none;
+		margin-bottom:15px;
+		font-size:20px;
+	}
+
+	.name {
+		display:inline;
+		width:44%;
+		padding-top: 7px;
+		padding-bottom: 7px;
+	}
+
+	.value {
+		width:44%;
+		padding-top: 7px;
+		padding-bottom: 7px;
+		display:inline;
+		float:right;
+	}
+	.car-type {
+		color:blue;
+		font-weight:bold;
+	}
+	.car-sample {
+		text-align:center;
+		font-size:30px;
+	}
